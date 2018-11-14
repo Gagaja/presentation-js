@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Presentation JS</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="txt">
+            <h1>Presentation JS</h1>
+
+        </div>
+    </header>
+    <div class="page-content">
+        <div id="sectionone">
+            <h2 class="sub-title-one">
+                Event attributes
+            </h2>
+            <h3 class="paragraf-one">
+                HTML events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can "react" on these
+                events.
+            </h3>
+            <div class="col-md-4 col-sm-6 blur-event">
+                <h2 class="sub-title">BLUR EVENT</h2>
+                <p class="paragraf"> Blur event is used when we want the element to resonate when it loses focus.</p>
+                <label for="years">How old are you?</label>
+                <br>
+                <input type="number" id="years">
+                <p id="result-years"></p>
+            </div>
+            <div class="col-md-4 col-sm-6 focus-event">
+                <h2 class="sub-title">FOCUS EVENT</h2>
+                <p class="paragraf">Focus event is used when we want the element to resonate when it is in focus.</p>
+                <label for="pass">Your password:</label>
+                <br>
+                <input type="password" id="pass">
+                <p id="pass-out"></p>
+            </div>
+            <div class="col-md-4 col-sm-6 cont-event">
+                <h2 class="sub-title">CONTEXTMENU EVENT</h2>
+                <p class="paragraf cont-para">The oncontextmenu event occurs when the user right-clicks on an element to open the context menu. </p>
+                <button id="days">Which day is today</button>
+                <p id="days-out"></p>
+            </div>
+            <div id="sectionone-secondpart">
+
+                <div class="col-md-4 col-sm-6 on-click">
+                    <h2 class="sub-title">ON CLICK</h2>
+                    <p class="paragraf">
+                        If we add
+                        <span>onclick</span> attribute to a javascript code , the value of this attribute will be executed if we
+                        click on it.</p>
+                    <label for="regards">Regards</label>
+                    <br>
+                    <button id="regards">Clik on button...</button>
+
+                </div>
+                <div id="on-mouse" class="col-md-4 col-sm-6" onmouseover="ChangeColor(this.id)">
+                    <h2 class="sub-title"> ON MOUSE OVER</h2>
+                    <p class="paragraf"> When the mouse cursor is on an element, element will change the color</p>
+
+
+                </div>
+                <div id="onmouseenter" class="col-md-4 col-sm-6 cont-event" onmouseenter="myFunction()">
+                    <h2 class="sub-title"> ON MOUSE ENTER</h2>
+                    <p class="paragraf cont-para">When the cursor mouse enters the space the element occupies , element will change the color </p>
+
+
+                </div>
+
+
+
+            </div>
+            <div id="sectiontwo">
+                <h2>Example for setInterval and clearInterval</h2>
+
+                <div id="ineterval" style="display:flex;justify-content:space-around; text-align: center; ">
+
+                    <div id="start">
+                        <div id='ball'>
+
+                        </div>
+                        <h3>Click on button to stop a ball</h3>
+                    </div>
+                    <button id="stop-ball" style="padding: 10px 30px">Stop</button>
+                </div>
+            </div>
+            <div id="sectionthree">
+
+                <h2 style="text-align:center;">LocalStorage & SessionStorage</h2>
+                <p style="text-align:center;">
+                    LocalStorage and SessionStorage serve to store information about the site in them, store the information in the pairs name
+                    = value, you can see the syntax below.
+
+                    <br> The difference between localStorage and sessionStorage is that sessionStorage is deleted after closing
+                    the browser while localStorage remains after closing the browser
+                    <br>
+                    <div class=" col-md-6 loc-stor">
+                        <h2 class="sub-title loc-stor2 "> LocalStorage</h2>
+                        <p class="paragraf">The localStorage object stores data with no expiration date. The data will not be deleted when the
+                            browser is closed, and will be available the next day, week, or year. The localStorage property
+                            is read-only.</p>
+                            <div id="result"></div>
+
+                    </div>
+                    <div class=" col-md-6 ses-stor">
+                        <h2 class="sub-title"> ON MOUSE ENTER</h2>
+                        <p class="paragraf cont-para">When the cursor mouse enters the space the element occupies , element will change the color </p>
+
+
+                    </div>
+
+
+            </div>
+
+
+
+        </div>
+
+        <script>
+
+            document.getElementById("years").addEventListener("blur", function () {
+                var x = document.getElementById("years").value;
+                var inputPolje = document.getElementById("years");
+                var ispis = document.getElementById("result-years");
+                if (x >= 18) {
+                    inputPolje.style.background = "green"; //dodaje zelenu boju u input polje kada se udaljimo od njega kursorom misa i tu je vidljiv blur efekat
+                    ispis.innerHTML = "You are born " + (2018 - x) + " year and you are allowed to entry!" // ispisuje koje dine si rodjen, ako si punoletan dozvoljen je pristup
+                } else if (x > 0 && x < 18) {
+                    inputPolje.style.background = "red";  //dodaje crvenu boju u input polje  kada se udaljimo od njega kursorom misa i tu je vidljiv blur efekat
+                    ispis.innerHTML = "You are born " + (2018 - x) + " year and you are forbidden to entry!"  //ispisuje koje dine si rodjen, ako si maloletan zabranjen pristup
+                } else {
+                    inputPolje.style.background = "white";  //u svi ostalim slucajevima input polje je belo
+                }
+                return ispis.style.color = "white"; //vraca rezulat godine rodjenja
+            });
+
+            // Focus event koristimo kada hocemo da element ozivi kada je u fokusu. U ovom slucaju je fokus na input polju
+
+            document.getElementById("pass").addEventListener("focus", function () {
+                var x = document.getElementById("pass").value;
+                if (x.length > 5) {
+                    document.getElementById("pass-out").innerHTML = "✔"; // ako je duzi od pet karaktera ispisuje kvacicu
+                    document.getElementById("pass-out").style.color = "#ffffff";
+                } else {
+                    document.getElementById("pass-out").innerHTML = " The password must be longer then 5 characters . ";
+                    document.getElementById("pass-out").style.color = "#ffffff"; // ako je kraci od pet karaktera ispisuje navedeni text
+                }
+            }
+            );
+            document.getElementById("days").addEventListener('contextmenu', function () {
+
+                var date = new Date();
+                var dateDay = date.getDay();
+                var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+                document.getElementById("days-out").innerHTML = week[dateDay - 1];
+                document.getElementById("days-out").style.color = "#ffffff";
+            }
+            );
+            function kretanjeLoptice(sirinaPravugaonika, visinaPravugaonika, precnikLoptice) {
+                var ball = document.getElementById("ball");
+                var posTop = 0,
+                    posLeft = 0,
+                    id = setInterval(vreme, 10),
+                    directionX = 'desno',
+                    smerUspravno = 'dole';
+                document.getElementById("stop-ball").addEventListener("click", function () {
+                    clearInterval(id);
+                }
+                );
+                function vreme() {
+                    if (posLeft >= (sirinaPravugaonika - precnikLoptice)) {
+                        directionX = 'levo';
+                    }
+                    if (posTop >= (visinaPravugaonika - precnikLoptice)) {
+                        smerUspravno = 'gore';
+                    }
+                    if (posLeft <= 0) {
+                        directionX = 'desno';
+                    }
+                    if (posTop <= 0) {
+                        smerUspravno = 'dole';
+                    }
+                    if (directionX == 'desno') {
+                        posLeft++;
+                    } else {
+                        posLeft--;
+                    }
+                    if (smerUspravno == 'gore') {
+                        posTop--;
+                    } else {
+                        posTop++;
+                    }
+                    ball.style.top = posTop + "px";
+                    ball.style.left = posLeft + 'px';
+                }
+            };
+            kretanjeLoptice(800, 200, 50);
+
+            document.getElementById("regards").addEventListener('click', function () {
+                alert("Hello");
+            });
+            function ChangeColor(elementid) {
+                document.getElementById(elementid).style.background = "Orange";
+
+                document.getElementById('on-mouse').onmouseover = ChangeColor;
+            };
+            function myFunction() {
+                document.getElementById("onmouseenter").style.background = "Green";
+            }
+
+
+        </script>
+
+</body>
+
+</html>
