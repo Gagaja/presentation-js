@@ -1,15 +1,17 @@
 *{
     box-sizing: border-box;
 }
-
+body{
+    background: #b0d0ff;
+}
 .txt{
   
     border-bottom: 1px solid #0000c4;
     
 }
 #sectionone{
-   min-height: 400px;
-    border-bottom: 1px solid #fff;
+   min-height: 500px;
+   
 }
  h1{
     font-size: 45px;
@@ -40,18 +42,23 @@
 .blur-event{
     background: #6ba5fd;
     border-right: 1px dashed #f0ffff; 
-    height: 200px;
+    height: 220px;
     border-bottom: 1px dashed #f0ffff;
+}
+#result-years,#pass-out,#days-out{
+    font-size: 18px;
+   
+    margin-top:10px;
 }
 .focus-event{
     background: #458fff;
     border-right: 1px dashed #f0ffff; 
-   height: 200px;
+    height: 220px;
     border-bottom: 1px dashed #f0ffff;
 }
 .cont-event{
     background: #2a7fff;
-    height: 200px;
+    height: 220px;
     border-bottom: 1px dashed #f0ffff;
 }
 .paragraf{
@@ -67,6 +74,7 @@
 #sectionone label{
     color: #fff;
     letter-spacing: 1px;
+    font-size: 15px;
 
 }
 #sectionone input{
@@ -88,39 +96,48 @@
 }
 
 
-#sectionone-secondpart{
-    min-height: 400px;
-    border-bottom: 1px solid #fff;
-}
+
 .on-click{
     background: #2179fc;
-    min-height: 200px;
+    height: 220px;
     border-right: 1px dashed #f0ffff; 
     border-bottom: 1px solid #0000c4; 
 }
 #on-mouse{
     background: #1170ff;
-    min-height: 200px;
+    height: 220px;
     border-right: 1px dashed #f0ffff; 
     border-bottom: 1px solid #0000c4; 
 }
 #onmouseenter{
     background: #0769fd;
-    min-height: 200px;
+    height: 220px;
     border-bottom: 1px solid #0000c4; 
 }
 #sectiontwo{
-   min-height: 500px;
+   min-height:500px;
    border-bottom: 1px solid #0000c4;
    padding: 50px 0;
-   background: #89b8ff;
+   
+   
+
+   
 }
-#sectiontwo> h2{
+
+.title-second{
     text-align: center;
     color: #0000c4;
     margin-bottom: 30px;
     letter-spacing: 1px;
     font-weight: bold;
+    
+}
+.paragraf-sec-two{
+    text-align: center;
+    color: #0000c4;
+    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 1.8;
 }
 #start{
     background-color: #0030b3; 
@@ -141,7 +158,7 @@
     margin-top:220px;
     border: 1px solid #0000c4;
     border-radius: 5px;
-
+    padding: 10px 30px;
   
     color: #fff;
     background: #0030b3;
@@ -156,28 +173,55 @@ h3{
     color: #fff;
     
 }
-#sectionthree > h2{
+#sectionthree{
+    width: 100%;
+    padding: 30px 0;
+    background: #0a6cff;
+}
+.third-tittle{
     text-align: center;
-    color: #0000c4;
+    color: #fff;
     margin-bottom: 10px;
     letter-spacing: 1px;
     font-weight: bold;
 
 }
-#sectionthree > p{
-    color: #0000c4;
+.third-para{
+    color: #fff;
     letter-spacing: 1px;
     font-size: 18px;
+    margin:25px 0;
+    text-align: center;
+    line-height: 1.8;
 }
 .loc-stor{
-    width: 50%;
+    width: 100%;
     min-height: 300px;
-    background: #89b8ff;
-    border-right: 1px dashed #f0ffff; 
+    background: #0066ff;
+   padding: 15px 0;
+    border-top: 1px dashed #f0ffff;
+}
+.local-stor{
+    text-align: center;
+    margin:20px 0;
+}
+
+.local-para{
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
 .ses-stor{
-    width: 50%;
+    width: 100%;
     min-height: 300px;
-    background: #89b8ff;
+    background: #005ce6;
+    border-top: 1px dashed #f0ffff;
+}
+.list{
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    list-style: none;
+    line-height: 1.8;
 }

@@ -33,6 +33,7 @@
                 <br>
                 <input type="number" id="years">
                 <p id="result-years"></p>
+
             </div>
             <div class="col-md-4 col-sm-6 focus-event">
                 <h2 class="sub-title">FOCUS EVENT</h2>
@@ -77,8 +78,14 @@
 
 
             </div>
-            <div id="sectiontwo">
-                <h2>Example for setInterval and clearInterval</h2>
+        </div>
+        <div id="sectiontwo">
+            <div>
+                <h2 class="title-second">Example for setInterval and clearInterval</h2>
+                <p class="paragraf-sec-two"><strong>The clearInterval()</strong> method clears a timer set with the setInterval() method.</p>
+                <p class="paragraf-sec-two"><strong>The setInterval()</strong> method calls a function or evaluates an expression at specified intervals (in milliseconds).
+                   <br>  and setInterval() method will continue calling the function until clearInterval() is called, or the window is closed.</p>
+                   
 
                 <div id="ineterval" style="display:flex;justify-content:space-around; text-align: center; ">
 
@@ -88,135 +95,167 @@
                         </div>
                         <h3>Click on button to stop a ball</h3>
                     </div>
-                    <button id="stop-ball" style="padding: 10px 30px">Stop</button>
+                    <button id="stop-ball">Stop</button>
                 </div>
-            </div>
-            <div id="sectionthree">
-
-                <h2 style="text-align:center;">LocalStorage & SessionStorage</h2>
-                <p style="text-align:center;">
-                    LocalStorage and SessionStorage serve to store information about the site in them, store the information in the pairs name
-                    = value, you can see the syntax below.
-
-                    <br> The difference between localStorage and sessionStorage is that sessionStorage is deleted after closing
-                    the browser while localStorage remains after closing the browser
-                    <br>
-                    <div class=" col-md-6 loc-stor">
-                        <h2 class="sub-title loc-stor2 "> LocalStorage</h2>
-                        <p class="paragraf">The localStorage object stores data with no expiration date. The data will not be deleted when the
-                            browser is closed, and will be available the next day, week, or year. The localStorage property
-                            is read-only.</p>
-                            <div id="result"></div>
-
-                    </div>
-                    <div class=" col-md-6 ses-stor">
-                        <h2 class="sub-title"> ON MOUSE ENTER</h2>
-                        <p class="paragraf cont-para">When the cursor mouse enters the space the element occupies , element will change the color </p>
-
-
-                    </div>
-
 
             </div>
+        </div>
+        <div id="sectionthree">
 
+            <h2 class="third-tittle">LocalStorage & SessionStorage</h2>
+            <p class="third-para">
+                LocalStorage and SessionStorage serve to store information about the site in them, store the information in the pairs name
+                = value, you can see the syntax below.
+
+                <br> The difference between localStorage and sessionStorage is that sessionStorage is deleted after closing the
+                browser while localStorage remains after closing the browser
+                <br>
+                <div class=" col-lg-12  loc-stor">
+                    <h2 class="sub-title local-stor "> LocalStorage</h2>
+                    <p class="paragraf local-para">The localStorage object stores data with no expiration date.
+                        <br> The data will not be deleted when the browser is closed, and will be available the next day, week,
+                        or year.
+                        <br> The localStorage property is read-only.</p>
+                    <div id="result">
+                        <p class="paragraf local-para">
+                            <br> window.localStorage.a=7;
+                            <br> console.log(window.localStorage.a);
+                        </p>
+                    </div>
+
+                </div>
+                <div class=" col-lg-12 ses-stor">
+                    <h2 class="sub-title local-stor "> SessionStorage </h2>
+                    <p class="paragraf local-para">The sessionStorage property allows you to access a session Storage object for the current origin. sessionStorage
+                        is similar to Window.localStorage; the only difference is while data stored in localStorage has no
+                        expiration set, data stored in sessionStorage gets cleared when the page session ends. A page session
+                        lasts for as long as the browser is open and survives over page reloads and restores. </p>
+                    <ul class="list">
+                        <li>sessionStorage.setItem // Save data to sessionStorage</li>
+                        <li>var data = sessionStorage.getItem // Get saved data from sessionStorage</li>
+                        <li>sessionStorage.removeItem // Remove saved data from sessionStorage
+                        </li>
+                        <li>sessionStorage.clear(); // Remove all saved data from sessionStorage
+                        </li>
+                    </ul>
+                    <div id="result2">
+                        <p class="paragraf local-para">
+                            window.sessionStorage.a=7;
+                            <br> console.log(window.sessionStorage.a);
+                            <br> localStorage.setItem("ime", "Dragan");
+                            <br> localStorage.setItem("prezime", "Marcetic");
+                            <br> var ime= localStorage.getItem("ime");
+                            <br> localStorage.removeItem("prezime");
+                        </p>
+                    </div>
+                </div>
 
 
         </div>
 
-        <script>
 
-            document.getElementById("years").addEventListener("blur", function () {
-                var x = document.getElementById("years").value;
-                var inputPolje = document.getElementById("years");
-                var ispis = document.getElementById("result-years");
-                if (x >= 18) {
-                    inputPolje.style.background = "green"; //dodaje zelenu boju u input polje kada se udaljimo od njega kursorom misa i tu je vidljiv blur efekat
-                    ispis.innerHTML = "You are born " + (2018 - x) + " year and you are allowed to entry!" // ispisuje koje dine si rodjen, ako si punoletan dozvoljen je pristup
-                } else if (x > 0 && x < 18) {
-                    inputPolje.style.background = "red";  //dodaje crvenu boju u input polje  kada se udaljimo od njega kursorom misa i tu je vidljiv blur efekat
-                    ispis.innerHTML = "You are born " + (2018 - x) + " year and you are forbidden to entry!"  //ispisuje koje dine si rodjen, ako si maloletan zabranjen pristup
-                } else {
-                    inputPolje.style.background = "white";  //u svi ostalim slucajevima input polje je belo
-                }
-                return ispis.style.color = "white"; //vraca rezulat godine rodjenja
-            });
 
-            // Focus event koristimo kada hocemo da element ozivi kada je u fokusu. U ovom slucaju je fokus na input polju
+    </div>
 
-            document.getElementById("pass").addEventListener("focus", function () {
-                var x = document.getElementById("pass").value;
-                if (x.length > 5) {
-                    document.getElementById("pass-out").innerHTML = "✔"; // ako je duzi od pet karaktera ispisuje kvacicu
-                    document.getElementById("pass-out").style.color = "#ffffff";
-                } else {
-                    document.getElementById("pass-out").innerHTML = " The password must be longer then 5 characters . ";
-                    document.getElementById("pass-out").style.color = "#ffffff"; // ako je kraci od pet karaktera ispisuje navedeni text
-                }
+    <script>
+
+        document.getElementById("years").addEventListener("blur", function () {
+            var x = document.getElementById("years").value;
+            var inputPolje = document.getElementById("years");
+            var ispis = document.getElementById("result-years");
+            if (x >= 18) {
+                inputPolje.style.background = "green"; //dodaje zelenu boju u input polje kada se udaljimo od njega kursorom misa i tu je vidljiv blur efekat
+                ispis.innerHTML = "You are born " + (2018 - x) + " year and you are allowed to entry!" // ispisuje koje dine si rodjen, ako si punoletan dozvoljen je pristup
+                ispis.style.color = "green";
+
+            } else if (x > 0 && x < 18) {
+                inputPolje.style.background = "red";  //dodaje crvenu boju u input polje  kada se udaljimo od njega kursorom misa i tu je vidljiv blur efekat
+                ispis.innerHTML = "You are born " + (2018 - x) + " year and you are forbidden to entry!"  //ispisuje koje dine si rodjen, ako si maloletan zabranjen pristup
+                ispis.style.color = "red";
+
+            } else {
+                inputPolje.style.background = "white";  //u svi ostalim slucajevima input polje je belo
+            }
+            return ispis; //vraca rezulat godine rodjenja
+
+        });
+
+        // Focus event koristimo kada hocemo da element ozivi kada je u fokusu. U ovom slucaju je fokus na input polju
+
+        document.getElementById("pass").addEventListener("focus", function () {
+            var x = document.getElementById("pass").value;
+            if (x.length > 5) {
+                document.getElementById("pass-out").innerHTML = "✔"; // ako je duzi od pet karaktera ispisuje kvacicu
+                document.getElementById("pass-out").style.color = "#ffffff";
+            } else {
+                document.getElementById("pass-out").innerHTML = " The password must be longer then 5 characters . ";
+                document.getElementById("pass-out").style.color = "#ffffff"; // ako je kraci od pet karaktera ispisuje navedeni text
+            }
+        }
+        );
+        document.getElementById("days").addEventListener('contextmenu', function () {
+
+            var date = new Date();
+            var dateDay = date.getDay();
+            var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            document.getElementById("days-out").innerHTML = week[dateDay - 1];
+            document.getElementById("days-out").style.color = "#ffffff";
+        }
+        );
+        function kretanjeLoptice(sirinaPravugaonika, visinaPravugaonika, precnikLoptice) {
+            var ball = document.getElementById("ball");
+            var posTop = 0,
+                posLeft = 0,
+                id = setInterval(vreme, 10),
+                directionX = 'desno',
+                smerUspravno = 'dole';
+            document.getElementById("stop-ball").addEventListener("click", function () {
+                clearInterval(id);
             }
             );
-            document.getElementById("days").addEventListener('contextmenu', function () {
-
-                var date = new Date();
-                var dateDay = date.getDay();
-                var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-                document.getElementById("days-out").innerHTML = week[dateDay - 1];
-                document.getElementById("days-out").style.color = "#ffffff";
-            }
-            );
-            function kretanjeLoptice(sirinaPravugaonika, visinaPravugaonika, precnikLoptice) {
-                var ball = document.getElementById("ball");
-                var posTop = 0,
-                    posLeft = 0,
-                    id = setInterval(vreme, 10),
-                    directionX = 'desno',
+            function vreme() {
+                if (posLeft >= (sirinaPravugaonika - precnikLoptice)) {
+                    directionX = 'levo';
+                }
+                if (posTop >= (visinaPravugaonika - precnikLoptice)) {
+                    smerUspravno = 'gore';
+                }
+                if (posLeft <= 0) {
+                    directionX = 'desno';
+                }
+                if (posTop <= 0) {
                     smerUspravno = 'dole';
-                document.getElementById("stop-ball").addEventListener("click", function () {
-                    clearInterval(id);
                 }
-                );
-                function vreme() {
-                    if (posLeft >= (sirinaPravugaonika - precnikLoptice)) {
-                        directionX = 'levo';
-                    }
-                    if (posTop >= (visinaPravugaonika - precnikLoptice)) {
-                        smerUspravno = 'gore';
-                    }
-                    if (posLeft <= 0) {
-                        directionX = 'desno';
-                    }
-                    if (posTop <= 0) {
-                        smerUspravno = 'dole';
-                    }
-                    if (directionX == 'desno') {
-                        posLeft++;
-                    } else {
-                        posLeft--;
-                    }
-                    if (smerUspravno == 'gore') {
-                        posTop--;
-                    } else {
-                        posTop++;
-                    }
-                    ball.style.top = posTop + "px";
-                    ball.style.left = posLeft + 'px';
+                if (directionX == 'desno') {
+                    posLeft++;
+                } else {
+                    posLeft--;
                 }
-            };
-            kretanjeLoptice(800, 200, 50);
-
-            document.getElementById("regards").addEventListener('click', function () {
-                alert("Hello");
-            });
-            function ChangeColor(elementid) {
-                document.getElementById(elementid).style.background = "Orange";
-
-                document.getElementById('on-mouse').onmouseover = ChangeColor;
-            };
-            function myFunction() {
-                document.getElementById("onmouseenter").style.background = "Green";
+                if (smerUspravno == 'gore') {
+                    posTop--;
+                } else {
+                    posTop++;
+                }
+                ball.style.top = posTop + "px";
+                ball.style.left = posLeft + 'px';
             }
+        };
+        kretanjeLoptice(800, 200, 50);
+
+        document.getElementById("regards").addEventListener('click', function () {
+            alert("Hello");
+        });
+        function ChangeColor(elementid) {
+            document.getElementById(elementid).style.background = "Orange";
+
+            document.getElementById('on-mouse').onmouseover = ChangeColor;
+        };
+        function myFunction() {
+            document.getElementById("onmouseenter").style.background = "Green";
+        }
 
 
-        </script>
+    </script>
 
 </body>
 
